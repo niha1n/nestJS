@@ -7,4 +7,7 @@ export class CreateuserDto{
     @IsNumber()
     age:number;
 
+    @IsString()
+    password:string;
+
 }
