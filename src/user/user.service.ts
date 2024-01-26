@@ -19,10 +19,13 @@ export class UserService {
     return this.userRepository.save(createUserDto);
   }
   update(updateUserDto: UpdateUserDto, userId: number) {
-    return this.userRepository.update(userId,updateUserDto);
+    return this.userRepository.update(userId, updateUserDto);
   }
   show(id: number) {
-    return  this.userRepository.findOne({ where :{id} });;
+    return this.userRepository.findOne({ where: { id } });
+  }
+  findByEmail(email: string) {
+    return this.userRepository.findOne({ where: { email } });
   }
   delete(userId: number) {
     return this.userRepository.delete(userId);
