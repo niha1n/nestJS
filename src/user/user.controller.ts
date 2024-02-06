@@ -33,7 +33,6 @@ export class UserController {
   }
 
   @Patch('/:userId')
-  @Roles(Role.Admin)
   update(
     @Body() updateUserDto: UpdateUserDto,
     @Param('userId', ParseIntPipe) userId: number,

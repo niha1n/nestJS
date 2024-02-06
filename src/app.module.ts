@@ -15,6 +15,7 @@ import { JwtModule, JwtService } from '@nestjs/jwt';
 import { AuthService } from './auth/auth.service';
 import { jwtConstants } from './auth/auth.constant';
 import { PostsModule } from './posts/posts.module';
+import { Post } from './posts/posts.entity';
 
 
 @Module({
@@ -29,7 +30,7 @@ import { PostsModule } from './posts/posts.module';
       username:`root`,
       password: `nihal132`,
       database: 'nestjs',
-      entities: [User],
+      entities: [User,Post],
       synchronize: true,
     }),
     AuthModule,
