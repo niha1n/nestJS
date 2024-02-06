@@ -13,6 +13,8 @@ import { Request } from 'express';
 import { UserService } from './user.service';
 import { UpdateUserDto } from './dto/updateUser.dto';
 import { CreateuserDto } from './dto/createUser.dto';
+import { Roles } from 'src/roles/roles.decorator';
+import { Role } from 'src/roles/role.enum';
 
 @Controller('user')
 export class UserController {
@@ -25,11 +27,13 @@ export class UserController {
   }
 
   @Post('')
+  
   store(@Body() createUserDto: CreateuserDto) {
     return this.userService.create(createUserDto);
   }
 
   @Patch('/:userId')
+  @Roles(Role.Admin)
   update(
     @Body() updateUserDto: UpdateUserDto,
     @Param('userId', ParseIntPipe) userId: number,
