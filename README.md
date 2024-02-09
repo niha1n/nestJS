@@ -11,7 +11,8 @@ profile:
 /profile
 GET : accessible only for admin
 
-
+messages 
+/messages
 
 
 

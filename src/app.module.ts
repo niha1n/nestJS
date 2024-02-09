@@ -16,6 +16,9 @@ import { AuthService } from './auth/auth.service';
 import { jwtConstants } from './auth/auth.constant';
 import { PostsModule } from './posts/posts.module';
 import { Post } from './posts/posts.entity';
+import { EventsModule } from './events/events.module';
+import { MessagesModule } from './messages/messages.module';
+import { Message } from './messages/entity/message.entity';
 
 
 @Module({
@@ -30,7 +33,7 @@ import { Post } from './posts/posts.entity';
       username:`root`,
       password: `nihal132`,
       database: 'nestjs',
-      entities: [User,Post],
+      entities: [User,Post,Message],
       synchronize: true,
     }),
     AuthModule,
@@ -41,6 +44,8 @@ import { Post } from './posts/posts.entity';
       signOptions: { expiresIn: '1h' },
     }),
     PostsModule,
+    EventsModule,
+    MessagesModule,
     
     
   ],
