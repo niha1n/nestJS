@@ -3,13 +3,13 @@ import { CreateMessageDto } from './dto/createMessage.dto';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Message } from './entity/message.entity';
 import { Repository } from 'typeorm';
-import { EventsGateway } from 'src/events/events.gateway';
 import { UpdateMessageDto } from './dto/updatemessage.dto';
-import { AuthService } from 'src/auth/auth.service';
 import { Request } from 'express';
 import { JwtModule } from '@nestjs/jwt';
 import { verify } from 'jsonwebtoken';
 import { jwtConstants } from 'src/auth/auth.constant';
+import { EventsGateway } from 'src/events/events.gateway';
+import { AuthService } from 'src/auth/auth.service';
 
 @Injectable()
 export class MessagesService {

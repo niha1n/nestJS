@@ -19,6 +19,8 @@ import { Post } from './posts/posts.entity';
 import { EventsModule } from './events/events.module';
 import { MessagesModule } from './messages/messages.module';
 import { Message } from './messages/entity/message.entity';
+import { UserModule } from './user/user.module';
+import { RolesModule } from './roles/roles.module';
 
 
 @Module({
@@ -46,6 +48,7 @@ import { Message } from './messages/entity/message.entity';
     PostsModule,
     EventsModule,
     MessagesModule,
+    RolesModule,
     
     
   ],
